@@ -1,4 +1,4 @@
-package com.example.OdontologiaIntegrador.Controller;
+package com.example.OdontologiaIntegrador.dto.Controller;
 
 import com.example.OdontologiaIntegrador.dto.DomicilioDTO;
 import com.example.OdontologiaIntegrador.service.IDomicilioService;
@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -15,8 +16,10 @@ public class DomicilioContoller {
     @Autowired
     IDomicilioService domicilioService;
 
-    @PostMapping
+
+    @PostMapping("/crear")
     public ResponseEntity<?> guardarDomicilio(@RequestBody DomicilioDTO Domicilio){
+        System.out.println(Domicilio.getCalle());
         domicilioService.crearDomicilio(Domicilio);
         return ResponseEntity.ok(HttpStatus.OK);
     }

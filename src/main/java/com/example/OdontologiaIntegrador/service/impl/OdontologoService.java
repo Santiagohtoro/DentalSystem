@@ -2,7 +2,7 @@ package com.example.OdontologiaIntegrador.service.impl;
 
 import com.example.OdontologiaIntegrador.dto.OdontologoDTO;
 import com.example.OdontologiaIntegrador.model.Odontologo;
-import com.example.OdontologiaIntegrador.repository.IOdontologoRepository;
+import com.example.OdontologiaIntegrador.service.repository.IOdontologoRepository;
 import com.example.OdontologiaIntegrador.service.IOdontologoService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

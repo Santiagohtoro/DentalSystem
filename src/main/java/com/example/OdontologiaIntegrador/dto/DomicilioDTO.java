@@ -1,7 +1,6 @@
 package com.example.OdontologiaIntegrador.dto;
 
 import com.example.OdontologiaIntegrador.model.Domicilio;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package com.example.OdontologiaIntegrador.Controller;
+package com.example.OdontologiaIntegrador.dto.Controller;
 
 import com.example.OdontologiaIntegrador.dto.PacienteDTO;
 import com.example.OdontologiaIntegrador.service.IPacienteService;
@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 import java.util.Set;
 
 @RestController

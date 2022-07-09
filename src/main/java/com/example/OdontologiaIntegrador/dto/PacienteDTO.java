@@ -1,5 +1,8 @@
 package com.example.OdontologiaIntegrador.dto;
 
+import com.example.OdontologiaIntegrador.model.Domicilio;
+
+
 import java.util.Date;
 
 public class PacienteDTO {
@@ -9,6 +12,15 @@ public class PacienteDTO {
     private String dni;
     private Date fechaIngreso;
     private String email;
+    private Domicilio domicilio;
+
+    public Domicilio getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(Domicilio domicilio) {
+        this.domicilio = domicilio;
+    }
 
     public Long getId() {
         return id;

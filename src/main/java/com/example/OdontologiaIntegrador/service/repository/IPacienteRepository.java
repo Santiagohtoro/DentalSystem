@@ -1,4 +1,4 @@
-package com.example.OdontologiaIntegrador.repository;
+package com.example.OdontologiaIntegrador.service.repository;
 
 import com.example.OdontologiaIntegrador.model.Paciente;
 import org.springframework.data.jpa.repository.JpaRepository;

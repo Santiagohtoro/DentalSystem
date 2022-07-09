@@ -1,4 +1,4 @@
-package com.example.OdontologiaIntegrador.Controller;
+package com.example.OdontologiaIntegrador.dto.Controller;
 
 import com.example.OdontologiaIntegrador.dto.TurnoDTO;
 import com.example.OdontologiaIntegrador.service.ITurnoService;

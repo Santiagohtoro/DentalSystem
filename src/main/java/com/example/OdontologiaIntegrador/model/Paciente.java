@@ -19,8 +19,9 @@ public class Paciente {
     private String email;
 
 
+
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_domicilio", referencedColumnName ="id" )
+    @JoinColumn(name = "id_domicilio", referencedColumnName = "id")
     private Domicilio domicilio;
 
     public Domicilio getDomicilio() {

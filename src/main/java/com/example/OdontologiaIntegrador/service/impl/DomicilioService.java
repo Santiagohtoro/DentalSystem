@@ -1,8 +1,9 @@
 package com.example.OdontologiaIntegrador.service.impl;
 
 import com.example.OdontologiaIntegrador.dto.DomicilioDTO;
+
 import com.example.OdontologiaIntegrador.model.Domicilio;
-import com.example.OdontologiaIntegrador.repository.IDomicilioRepository;
+import com.example.OdontologiaIntegrador.service.repository.IDomicilioRepository;
 import com.example.OdontologiaIntegrador.service.IDomicilioService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+
 @Service
 public class DomicilioService implements IDomicilioService {
     @Autowired
