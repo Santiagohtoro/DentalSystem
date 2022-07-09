@@ -7,15 +7,15 @@ import java.util.Date;
 @Table(name = "Turno")
 public class Turno {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date date;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name="odontologo_id", nullable = false)
     private Odontologo odontologo;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name = "paciente_id", nullable = false)
     private Paciente paciente;
 

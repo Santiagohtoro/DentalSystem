@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class Odontologo {
     @Id//secuencial
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String apellido;
     private String nombre;

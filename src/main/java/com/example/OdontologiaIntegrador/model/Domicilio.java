@@ -3,9 +3,10 @@ package com.example.OdontologiaIntegrador.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name="Domicilio")
 public class Domicilio {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String calle;
     private String numero;
