@@ -13,6 +13,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/pacientes")
+@CrossOrigin("*")
 public class PacienteController {
     @Autowired
     IPacienteService pacienteService;

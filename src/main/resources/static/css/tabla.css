@@ -1,0 +1,28 @@
+.table{
+    margin: 20px 20px 0px 20px;
+    width: 900px;
+    height: min-content;
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+}
+.brand{
+    margin: 20px 0px 0px 20px;
+    font-weight: bold;
+
+}
+
+.btnRegistrar{
+    color: crimson;
+    position: absolute;
+    top: 80%;
+    left: 88%;
+    box-shadow: black 1px 3px 10px ;
+    border-radius: 100%;
+}
+
+.hide{
+    display: none;
+}
+

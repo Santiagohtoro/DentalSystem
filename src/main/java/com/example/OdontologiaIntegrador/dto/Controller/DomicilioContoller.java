@@ -12,6 +12,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/domicilios")
+@CrossOrigin("*")
 public class DomicilioContoller {
     @Autowired
     IDomicilioService domicilioService;

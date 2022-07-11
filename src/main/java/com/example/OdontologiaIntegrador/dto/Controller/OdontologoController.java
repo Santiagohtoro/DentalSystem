@@ -11,6 +11,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/odontologos")
+@CrossOrigin("*")
 public class OdontologoController {
     @Autowired
     IOdontologoService odontologoService;
