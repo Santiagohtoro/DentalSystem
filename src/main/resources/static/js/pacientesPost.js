@@ -1,4 +1,5 @@
 window.addEventListener('load',function(){
+    
     const url = 'http://localhost:8080/pacientes';
     const btnOdontologos = document.querySelector('.btnOdontologos')
     const btnTurnos = document.querySelector('.btnTurnos');

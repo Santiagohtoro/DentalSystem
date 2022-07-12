@@ -1,35 +1,33 @@
 window.addEventListener('load',function(){
-
-
-    const url = 'http://localhost:8080/odontologos';
+    
+    const url = 'http://localhost:8080/turnos';
     const btnAgregar = document.querySelector('.btnRegistrar')
-    const btnPacientes = document.querySelector('.btnPacientes')
-    const btnTurnos= document.querySelector('.btnTurnos')
+    const btnOdontologos = document.querySelector('.odontologos')
+    const btnPacientes= document.querySelector('.btnPacientes')
     
-    
-    btnPacientes.addEventListener('click', function(event){
+
+    btnAgregar.addEventListener('click',function(event){
+        event.preventDefault();
+        location.replace('./registrarTurno.html');
+    })
+
+    btnOdontologos.addEventListener('click',function(event){
+        event.preventDefault();
+        location.replace('./listarOdontologos.html');
+    })
+
+    btnPacientes.addEventListener('click',function(event){
         event.preventDefault();
         location.replace('./listarPacientes.html');
     })
 
 
-    btnAgregar.addEventListener('click',function(event){
-        event.preventDefault();
-        location.replace('./registroOdontologos.html');
-    })
-
-    btnTurnos.addEventListener('click',function(event){
-        event.preventDefault();
-        location.replace('./listarTurnos.html');
-    })
-
-
     /* -------------------------------------------------------------------------- */
-    /*                 FUNCIÓN - Obtener listado de Odontologos [GET]               */
+    /*                 FUNCIÓN - Obtener listado de Turnos [GET]               */
     /* -------------------------------------------------------------------------- */
 
-    obtenerOdontologos();
-    function obtenerOdontologos(){
+    obtenerTurnos();
+    function obtenerTurnos(){
         
         const settings = {
             method: 'GET'
@@ -38,38 +36,39 @@ window.addEventListener('load',function(){
         fetch(url, settings)
             .then(response => response.json())
             .then(data => {
-                renderizarOdontologos(data);
-                eliminarOdontologo();
-                for(odontologo of data){
-                    console.log(odontologo)
+                renderizarTurnos(data);
+                eliminarTurnos();
+                for(turno of data){
+                    console.log(turno)
                 }
             })
     }
     /* -------------------------------------------------------------------------- */
-    /*                  FUNCIÓN  - Renderizar Odontologos en pantalla                 */
+    /*                  FUNCIÓN  - Renderizar Turnos en pantalla                 */
     /* -------------------------------------------------------------------------- */
 
-    function renderizarOdontologos(lista){
+    function renderizarTurnos(lista){
         const table = document.querySelector('.datos');
-        lista.forEach(odontologo => {
+        lista.forEach(turno => {
             table.innerHTML +=`
             <tr>
-                <th scope="row">${odontologo.id}</th>
-                <td>${odontologo.nombre}</td>
-                <td>${odontologo.apellido}</td>
-                <td>${odontologo.matricula}</td>
+                <th scope="row">${turno.id}</th>
+                <td>${turno.date}</td>
+                <td>${turno.odontologo.nombre} ${turno.odontologo.apellido}</td>
+                <td>${turno.paciente.nombre} ${turno.paciente.apellido}</td>
                 <td style="display: flex; justify-content: space-evenly">
-                    <button id="${odontologo.id}" type="button" class="btnEliminar btn btn-danger"><i id="${odontologo.id}" class="fa-regular fa-trash-can"></i></button>
+                    <button id="${turno.id}" type="button" class="btnEliminar btn btn-danger"><i id="${turno.id}" class="fa-regular fa-trash-can"></i></button>
               </td>
-            </tr>`   
+            </tr>`
+            
         });
     }
 
     /* -------------------------------------------------------------------------- */
-    /*                  FUNCIÓN  - Eliminar paciente [DELETE]                     */
+    /*                  FUNCIÓN  - Eliminar Turno [DELETE]                     */
     /* -------------------------------------------------------------------------- */
 
-    function eliminarOdontologo(){
+    function eliminarTurnos(){
         const btnEliminar = document.querySelectorAll('.btnEliminar');
         const eliminado= document.querySelector('#dltExitoso')
         btnEliminar.forEach(boton => {
@@ -79,7 +78,6 @@ window.addEventListener('load',function(){
                 const settings={
                     method: 'DELETE',
                     header:{
-                        //"Authorization": token,
                     }
                 };
                 console.log(identificador);
@@ -87,7 +85,7 @@ window.addEventListener('load',function(){
                 fetch(ruta,settings)
                     .then(response =>{
                         eliminado.classList.remove('hide');
-                        eliminado.innerText += "Odontologo eliminado correctamente";
+                        eliminado.innerText += "Turno eliminado correctamente";
                         setTimeout(() => {
                             eliminado.classList.add('hide');
                             location.reload();

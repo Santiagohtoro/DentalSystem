@@ -3,6 +3,7 @@ window.addEventListener('load',function(){
     const url = 'http://localhost:8080/pacientes';
     const btnAgregar = document.querySelector('.btnRegistrar')
     const btnOdontologos = document.querySelector('.odontologos')
+    const btnTurnos= document.querySelector('.btnTurnos')
     
 
     btnAgregar.addEventListener('click',function(event){
@@ -15,6 +16,10 @@ window.addEventListener('load',function(){
         location.replace('./listarOdontologos.html');
     })
 
+    btnTurnos.addEventListener('click',function(event){
+        event.preventDefault();
+        location.replace('./listarTurnos.html');
+    })
     /* -------------------------------------------------------------------------- */
     /*                 FUNCIÓN - Obtener listado de Pacientes [GET]               */
     /* -------------------------------------------------------------------------- */
@@ -51,7 +56,6 @@ window.addEventListener('load',function(){
                 <td>${paciente.dni}</td>
                 <td>${paciente.fechaIngreso}</td>
                 <td style="display: flex; justify-content: space-evenly">
-                    <button type="button" class="btn btn-success"><i class="fa-solid fa-rotate-left"></i></button>
                     <button id="${paciente.id}" type="button" class="btnEliminar btn btn-danger"><i id="${paciente.id}" class="fa-regular fa-trash-can"></i></button>
               </td>
             </tr>`
