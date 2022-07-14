@@ -14,6 +14,13 @@ public class DomicilioDTO {
 
     private Set<Domicilio> domicilio;
 
+    public DomicilioDTO(String calle, String numero, String localidad, String provincia) {
+        this.calle = calle;
+        this.numero = numero;
+        this.localidad = localidad;
+        this.provincia = provincia;
+    }
+
     public Set<Domicilio> getDomicilio() {
         return domicilio;
     }
