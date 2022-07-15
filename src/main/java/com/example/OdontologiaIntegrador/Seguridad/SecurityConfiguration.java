@@ -1,4 +1,4 @@
-package com.example.OdontologiaIntegrador.model;
+package com.example.OdontologiaIntegrador.Seguridad;
 
 import com.example.OdontologiaIntegrador.service.impl.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;

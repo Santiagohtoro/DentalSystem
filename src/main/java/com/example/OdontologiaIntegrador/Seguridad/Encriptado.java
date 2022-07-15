@@ -1,4 +1,4 @@
-package com.example.OdontologiaIntegrador.model;
+package com.example.OdontologiaIntegrador.Seguridad;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
