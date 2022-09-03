@@ -23,14 +23,14 @@ public class CargadeDatos implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String password = passwordEncoder.encode("password");
+        String password = passwordEncoder.encode("admin");
         BCryptPasswordEncoder passwordEncoder2 = new BCryptPasswordEncoder();
-        String password2 = passwordEncoder2.encode("password2");
+        String password2 = passwordEncoder2.encode("user");
 
-        usuarioRepository.save(new Usuario("Santiago", "Santi", "santiago@gmail.com", password, Rol.ADMIN));
-        usuarioRepository.save(new Usuario("Santiago2", "Santi2", "santiago2@gmail.com", password2,Rol.USER));
-
-
+        usuarioRepository.save(new Usuario("Admin", "Admin", "admin@gmail.com", password, Rol.ADMIN));
+        usuarioRepository.save(new Usuario("User", "User1", "user1@gmail.com", password2,Rol.USER));
 
     }
+
+
 }
